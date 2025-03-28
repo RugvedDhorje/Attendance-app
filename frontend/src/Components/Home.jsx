@@ -4,9 +4,9 @@ import Navbar from "./Navbar";
 
 const Home = () => {
   return (
-    <>
+    <div className="w-full bg-[#FEF9F0] h-screen">
       <Navbar />
-      <div className="w-full h-screen mx-auto bg-[#FEF9F0]">
+      <div className="w-full mx-auto">
         <div className="max-w-screen-2xl mx-auto">
           <h1 className="md:text-[50px] text-[40px] text-[#560103] font-bold text-center py-10">
             Attendance app
@@ -59,7 +59,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
