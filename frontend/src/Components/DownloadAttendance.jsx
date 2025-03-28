@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const DownloadAttendance = () => {
   const [date, setDate] = useState("");
@@ -34,21 +36,31 @@ const DownloadAttendance = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-lg text-center">
-      <h2 className="text-xl font-bold mb-4">Download Attendance</h2>
-      <input
-        type="date"
-        value={date}
-        onChange={(e) => setDate(e.target.value)}
-        className="w-full border p-2 rounded mb-4"
-      />
-      <button
-        onClick={handleDownload}
-        className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-      >
-        Download CSV
-      </button>
-      {error && <p className="text-red-500 mt-3">{error}</p>}
+    <div className="w-full h-screen bg-[#FEF9F0]">
+      <Navbar />
+      <div className="max-w-md mx-auto bg-[#FEF9F0] p-6 rounded-xl shadow-lg text-center">
+        <h2 className="text-[30px] md:text-[50px] text-center font-bold my-10 text-[#560103]">
+          Download Attendance
+        </h2>
+        <input
+          type="date"
+          value={date}
+          onChange={(e) => setDate(e.target.value)}
+          className="px-4 py-2 border rounded-md w-64 md:w-80 mb-2 text-[24px]"
+        />
+        <button
+          onClick={handleDownload}
+          className="bg-red-800 text-[24px] w-full font-semibold text-white py-2 my-5 rounded-md"
+        >
+          Download CSV
+        </button>
+        <Link to={"/"}>
+          <button className="bg-green-500 text-[24px] w-full font-semibold text-white py-2 my-3 rounded-md">
+            Back
+          </button>
+        </Link>
+        {error && <p className="text-red-500 mt-3">{error}</p>}
+      </div>
     </div>
   );
 };

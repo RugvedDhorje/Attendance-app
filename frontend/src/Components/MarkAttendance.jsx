@@ -35,9 +35,9 @@ const MarkAttendance = () => {
   };
 
   return (
-    <>
+    <div className="bg-[#FEF9F0] h-screen">
       <Navbar />
-      <div className="flex flex-col items-center p-6 bg-[#FEF9F0] h-screen">
+      <div className="flex flex-col items-center p-6 ">
         <h2 className="text-[30px] md:text-[50px] text-center font-bold my-10 text-[#560103]">
           Mark Student Attendance
         </h2>
@@ -68,7 +68,7 @@ const MarkAttendance = () => {
         {error && <p className="text-red-500 mt-3">{error}</p>}
         {message && <p className="text-green-500 mt-3">{message}</p>}
       </div>
-    </>
+    </div>
   );
 };
 

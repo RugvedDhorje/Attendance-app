@@ -4,6 +4,7 @@ import DownloadAttendance from "./Components/DownloadAttendance";
 import Home from "./Components/Home";
 import MarkAttendance from "./Components/MarkAttendance";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SearchStudent from "./Components/SearchStudent";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -27,10 +28,10 @@ function App() {
       path: "/downloadAttendance", // Use this for services
       element: <DownloadAttendance />,
     },
-    // {
-    //   path:"/about",
-    //   element: <AboutUs/>
-    // },
+    {
+      path: "/search",
+      element: <SearchStudent />,
+    },
     // {
     //   path:"/infrastructure",
     //   element: <Infrastructure/>

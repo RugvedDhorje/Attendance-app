@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import Navbar from "./Navbar";
+import { Link } from "react-router-dom";
 
 const DeleteStudent = () => {
   const [studentId, setStudentId] = useState("");
@@ -30,26 +32,38 @@ const DeleteStudent = () => {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 ">
-      <h2 className="text-xl font-semibold mb-4">Delete Student</h2>
+    <div className="bg-[#FEF9F0] h-screen ">
+      <Navbar />
+      <div className="flex flex-col items-center p-6 ">
+        <h2 className="text-[30px] md:text-[50px] text-center font-bold my-10 text-[#560103]">
+          Delete Student
+        </h2>
 
-      <input
-        type="text"
-        value={studentId}
-        onChange={(e) => setStudentId(e.target.value)}
-        placeholder="Enter Student ID"
-        className="px-4 py-2 border rounded-md w-64 mb-2"
-      />
+        <input
+          type="text"
+          value={studentId}
+          onChange={(e) => setStudentId(e.target.value)}
+          placeholder="Enter Student ID"
+          className="px-4 py-2 border rounded-md w-64 md:w-80 mb-2 text-[24px]"
+        />
 
-      <button
-        onClick={markAttendance}
-        className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
-      >
-        Delete Student
-      </button>
-
-      {error && <p className="text-red-500 mt-3">{error}</p>}
-      {message && <p className="text-green-500 mt-3">{message}</p>}
+        <button
+          onClick={markAttendance}
+          className="bg-red-800 text-[24px] font-semibold text-white px-5 py-2 my-5 rounded-md"
+        >
+          Delete Student
+        </button>
+        <Link to={"/"}>
+          <button
+            onClick={markAttendance}
+            className="bg-green-600 text-[24px] font-semibold text-white px-6 py-2 my-3 rounded-md hover:bg-green-400"
+          >
+            Back
+          </button>
+        </Link>
+        {error && <p className="text-red-500 mt-3">{error}</p>}
+        {message && <p className="text-green-500 mt-3">{message}</p>}
+      </div>
     </div>
   );
 };

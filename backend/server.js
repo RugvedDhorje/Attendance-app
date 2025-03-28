@@ -138,7 +138,7 @@ app.get("/download-attendance", async (req, res) => {
 
 // API to search user by name
 app.get("/search-student", async (req, res) => {
-  const { name, surname } = req.body; // Use query parameters for GET request
+  const { name, surname } = req.query; // Use query parameters for GET request
 
   if (!name || !surname) {
     return res.status(400).json({ error: "Name and surname are required" });
